@@ -231,7 +231,7 @@ webpackJsonp([1], {
                             overflow: "auto"
                         },
                         attrs: {
-                        onclick: "$(this).selectText();"
+                        onclick: "$(this).selectText();toastr['success']('Your Text is successfully copied to clipboard');"
                         }
                     }, [e._v(".bg-" + e._s(t.sprite_info.class_name) + " {\n    width: " + e._s(t.width) + "px; height: " + e._s(t.height) + "px;\n    background: url('css_sprites.png') -" + e._s(t.sprite_info.x ? t.sprite_info.x + "px" : "0") + " -" + e._s(t.sprite_info.y ? t.sprite_info.y + "px" : "0") + ";\n}")])]), e._v(" "), i("div", {
                         staticStyle: {
