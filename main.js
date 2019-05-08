@@ -1,8 +1,236 @@
-//Lazy Load Youtube Video
-!function(){for(var e=document.querySelectorAll(".youtube"),t=0;t<e.length;t++){var r="https://img.youtube.com/vi/"+e[t].dataset.embed+"/maxresdefault.jpg",a=new Image;a.src=r,a.addEventListener("load",void e[t].appendChild(a)),e[t].addEventListener("click",function(){var e=document.createElement("iframe");e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen",""),e.setAttribute("src","https://www.youtube.com/embed/"+this.dataset.embed+"?rel=0&showinfo=0&autoplay=1"),this.innerHTML="",this.appendChild(e)})}}();$('head').append('<style type="text/css">.play-button:before{content:"";top:50%;left:50%;transform:translate3d( -50%,-50%,0 );position:absolute;border-style:solid;border-width:15px 0 15px 26.0px;border-color:transparent transparent transparent #fff}.play-button{top:50px;left:50%;transform:translate3d( -50%,-50%,0 );position:absolute;cursor:pointer;width:90px;height:60px;background-color:#333;box-shadow:0 0 30px rgba( 0,0,0,0.6 );z-index:1;opacity:0.8;border-radius:6px}.youtube img{width:100%}</style>');$('.play-button').css("top", $(".youtube img").height() / 2);$(".youtube img").attr({"alt": $("h2.entry-title").html(), "title": $("h2.entry-title").html()});
-//Locker
-document.addEventListener("keydown",function(){return 123!=event.keyCode&&((!event.ctrlKey||!event.shiftKey||73!=event.keyCode)&&((!event.ctrlKey||85!=event.keyCode)&&((!event.ctrlKey||65!=event.keyCode)&&void 0)))},!1),document.addEventListener?document.addEventListener("contextmenu",function(e){e.preventDefault()},!1):document.attachEvent("oncontextmenu",function(){window.event.returnValue=!1}),function e(){try{!function e(t){1===(""+t/t).length&&0!==t||function(){}.constructor("debugger")(),e(++t)}(0)}catch(t){setTimeout(e,5e3)}}(),navigator.onLine||(window.location.href="https://www.raufgraphics.com");
-//Downloader
-function generate(downloadbtn,clickbtn,link,time){var linkDL=document.getElementById(downloadbtn),btn=document.getElementById(clickbtn),direklink=link,waktu=time;var teks_waktu=document.createElement("span");linkDL.parentNode.replaceChild(teks_waktu,linkDL);var id;id=setInterval(function(){waktu--;if(waktu<0){teks_waktu.parentNode.replaceChild(linkDL,teks_waktu);clearInterval(id);var att=document.createAttribute("href");att.value=link;linkDL.setAttributeNode(att);linkDL.click();linkDL.style.display="inline"}else{teks_waktu.innerHTML="<i class='fa fa-clock-o' aria-hidden='true'></i> "+"Your Download Will Start In <b>"+waktu.toString()+"</b> Seconds...";btn.style.display="none"}},1000)}
-// Disqus Parse Tools
-function cdClear(){var e=document.getElementById("codes");e.value="",e.focus();for(var t=document.querySelectorAll("#cvrt3, #cvrt4, #cvrt5, #cvrt6, #cvrt7, #cvrt8, #cvrt9, #cvrt10, #cvrt11"),c=0;c<t.length;c++)t[c].disabled=!1}function preConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt1"),l=document.getElementById("opt2"),o=document.getElementById("opt3"),n=document.getElementById("opt4"),d=document.getElementById("opt5"),r=document.getElementById("opt10");t=t.replace(/\t/g,"    "),r.checked&&(c.checked&&(t=t.replace(/&/g,"&amp;")),l.checked&&(t=t.replace(/'/g,"&#039;")),o.checked&&(t=t.replace(/"/g,"&quot;")),n.checked&&(t=t.replace(/</g,"&lt;")),d.checked&&(t=t.replace(/>/g,"&gt;")),t=t.replace(/^/,"<pre>"),t=t.replace(/$/,"</pre>"),e.value=t,e.focus(),e.select())}function codeConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt1"),l=document.getElementById("opt2"),o=document.getElementById("opt3"),n=document.getElementById("opt4"),d=document.getElementById("opt5"),r=document.getElementById("opt11");t=t.replace(/\t/g,"    "),r.checked&&(c.checked&&(t=t.replace(/&/g,"&amp;")),l.checked&&(t=t.replace(/'/g,"&#039;")),o.checked&&(t=t.replace(/"/g,"&quot;")),n.checked&&(t=t.replace(/</g,"&lt;")),d.checked&&(t=t.replace(/>/g,"&gt;")),t=t.replace(/^/,"<code>"),t=t.replace(/$/,"</code>"),e.value=t,e.focus(),e.select())}function precodeConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt1"),l=document.getElementById("opt2"),o=document.getElementById("opt3"),n=document.getElementById("opt4"),d=document.getElementById("opt5"),r=document.getElementById("opt12");t=t.replace(/\t/g,"    "),r.checked&&(c.checked&&(t=t.replace(/&/g,"&amp;")),l.checked&&(t=t.replace(/'/g,"&#039;")),o.checked&&(t=t.replace(/"/g,"&quot;")),n.checked&&(t=t.replace(/</g,"&lt;")),d.checked&&(t=t.replace(/>/g,"&gt;")),t=t.replace(/^/,"<pre><code>"),t=t.replace(/$/,"</code></pre>"),e.value=t,e.focus(),e.select())}function spoilerConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt13");t=t.replace(/\t/g,"    "),c.checked&&(t=t.replace(/^/,"<spoiler>"),t=t.replace(/$/,"</spoiler>"),e.value=t,e.focus(),e.select())}function strongConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt6");t=t.replace(/\t/g,"    "),c.checked&&(t=t.replace(/^/,"<strong>"),t=t.replace(/$/,"</strong>"),e.value=t,e.focus(),e.select())}function emConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt7");t=t.replace(/\t/g,"    "),c.checked&&(t=t.replace(/^/,"<em>"),t=t.replace(/$/,"</em>"),e.value=t,e.focus(),e.select())}function uConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt8");t=t.replace(/\t/g,"    "),c.checked&&(t=t.replace(/^/,"<u>"),t=t.replace(/$/,"</u>"),e.value=t,e.focus(),e.select())}function strikeConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt9");t=t.replace(/\t/g,"    "),c.checked&&(t=t.replace(/^/,"<strike>"),t=t.replace(/$/,"</strike>"),e.value=t,e.focus(),e.select())}function embedConvert(){var e=document.getElementById("codes"),t=e.value,c=document.getElementById("opt20");t=t.replace(/\t/g,"    "),c.checked&&(t=t.replace(/^/,'<iframe src="https://embed.disqus.com/p/'),t=t.replace(/$/,'" style="border:0;width:100%;height:300px;" seamless="seamless" scrolling="no" allowtransparency="true"></iframe>'),e.value=t,e.focus(),e.select())}function toggleNavPanel(e){var t=document.getElementById(e),c=document.getElementById("tombol-pesan"),l="block";t.style.display==l?(t.style.display="none",c.innerHTML="<i class='fa fa-angle-down'></i>"):(t.style.display="block",c.innerHTML="<i class='fa fa-angle-up'></i>")}function toggleNavPanel2(e){var t=document.getElementById(e),c=document.getElementById("parser-button"),l="block";t.style.display==l?(t.style.display="none",c.innerHTML="Show Parser Box"):(t.style.display="block",c.innerHTML="Hide Parse Box")}
+/**
+ * @name  de4js
+ * @description  JavaScript Deobfuscator and Unpacker
+ * @author  Zzbaivong <Zzbaivong@gmail.com> (http://localhost:4000)
+ * @version  1.3.0
+ * @copyright  Zzbaivong 2017
+ * @license  MIT
+ */
+
+/* globals ClipboardJS */
+
+(function () {
+
+    // https://davidwalsh.name/javascript-debounce-function
+    function debounce(func, wait, immediate) {
+        var timeout;
+        return function () {
+            var context = this,
+                args = arguments;
+            var later = function () {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    }
+
+    function updateOnlineStatus() {
+        if (navigator.onLine) {
+            offlineBadge.classList.remove('show');
+        } else {
+            offlineBadge.classList.add('show');
+        }
+    }
+
+    var input = document.getElementById('input'),
+        output = document.getElementById('output'),
+        view = document.getElementById('view'),
+
+        encode = document.getElementsByName('encode'),
+
+        beautify = document.getElementById('beautify'),
+        auto = document.getElementById('auto'),
+
+        redecode = document.getElementById('redecode'),
+        clear = document.getElementById('clear'),
+
+        preview = document.getElementById('preview'),
+
+        clipboard = new ClipboardJS('#copyjs', {
+            target: function() {
+                return view;
+            }
+        }),
+
+        offlineBadge = document.getElementById('offline'),
+
+        startEffect = function () {
+            if (output.value === '') view.textContent = 'Please wait...';
+            view.classList.add('waiting');
+        },
+        stopEffect = function () {
+            view.classList.remove('waiting');
+        },
+
+        resetcopy = function (trigger) {
+            if (!trigger.classList.contains('copied')) return;
+            trigger.classList.remove('copied');
+        },
+        timereset = function (trigger) {
+            setTimeout(function () {
+                resetcopy(trigger);
+            }, 800);
+        },
+
+        externalStyle = '*{margin:0;padding:0}html{line-height:1em;background:#1d1f21;color:#c5c8c6}pre{counter-reset:line-numbers;white-space:pre-wrap;word-wrap:break-word;word-break:break-all}code::before{counter-increment:line-numbers;content:counter(line-numbers);display:block;position:absolute;left:-4.5em;top:0;width:4em;text-align:right;color:#60686f;white-space:pre}code{display:block;position:relative;margin-left:4em;padding-left:.5em;min-height:1em;border-left:1px solid #32363b}pre{padding:.5em .5em .5em 5em;border-left:1px solid #1d1f21}pre.hljs{padding-left:.5em;border-left:0 none}code::after{content:".";visibility:hidden} .hljs-comment,.hljs-quote{color:#969896}.hljs-variable,.hljs-template-variable,.hljs-tag,.hljs-name,.hljs-selector-id,.hljs-selector-class,.hljs-regexp,.hljs-deletion{color:#c66}.hljs-number,.hljs-built_in,.hljs-builtin-name,.hljs-literal,.hljs-type,.hljs-params,.hljs-meta,.hljs-link{color:#de935f}.hljs-attribute{color:#f0c674}.hljs-string,.hljs-symbol,.hljs-bullet,.hljs-addition{color:#b5bd68}.hljs-title,.hljs-section{color:#81a2be}.hljs-keyword,.hljs-selector-tag{color:#b294bb}.hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}',
+        externalUrl,
+        externalPreview = function (source) {
+            if (externalUrl) URL.revokeObjectURL(externalUrl);
+
+            source = '<html><head><meta charset="utf-8"><link rel="shortcut icon" type="image/png" href="/de4js/favicon.png"><title>de4js | Preview</title><style>' + externalStyle + '</style></head><body><pre class="hljs">' + source + '</pre></body></html>';
+
+            externalUrl = new Blob([source], {
+                type: 'text/html'
+            });
+            externalUrl = URL.createObjectURL(externalUrl);
+
+            preview.classList.add('show');
+            preview.href = externalUrl;
+        },
+
+        workerFormat,
+        workerDecode,
+
+        format = debounce(function () {
+            var source = output.value.trim();
+
+            if (source === '') return;
+
+            if (!workerFormat) {
+                workerFormat = new Worker('https://raw.githack.com/softwebtuts/softwebtuts.com/master/format.js');
+                workerFormat.addEventListener('message', function (e) {
+                    view.innerHTML = e.data;
+                    externalPreview(e.data);
+
+                    stopEffect();
+                });
+            }
+
+            startEffect();
+            workerFormat.postMessage({
+                source: source,
+                beautify: beautify.checked
+            });
+        }, 250),
+
+        detect = function (source) {
+            var type = '';
+
+            if (/^[\s\n]*var\s_\d{4};[\s\n]*var\s_\d{4}\s?=/.test(source)) {
+                type = '_numberencode';
+            } else if (source.indexOf("/｀ｍ´）ﾉ ~┻━┻   //*´∇｀*/ ['_'];") !== -1) { // eslint-disable-line quotes
+                type = 'aaencode';
+            } else if (source.indexOf('$={___:++$,$$$$:(![]+"")[$]') !== -1) {
+                type = 'jjencode';
+            } else if (source.replace(/[[\]()!+]/gm, '').trim() === '') {
+                type = 'jsfuck';
+            } else if (source.indexOf(' ') === -1 && (source.indexOf('%2') !== -1 || source.replace(/[^%]+/g, '').length > 3)) {
+                type = 'urlencode';
+            } else if (/^[\s\n]*var\s_0x\w+\s?=\s?\["/.test(source)) {
+                type = 'arrayencode';
+            } else if (source.indexOf('eval(') !== -1) {
+                if (/\b(window|document|console)\.\b/i.test(source)) return type;
+                type = 'evalencode';
+            }
+
+            document.querySelector('.magic-radio:checked').checked = false;
+            document.querySelector('.magic-radio[value="' + type + '"]').checked = true;
+
+            return type;
+        },
+
+        decode = debounce(function () {
+            var source = input.value.trim(),
+                packer = document.bvDecode.encode.value;
+
+            if (source === '') return;
+            if (auto.checked) packer = detect(source);
+
+            if (packer === 'nicify') return;
+            if (packer === '') {
+                output.value = source;
+                format();
+                return;
+            }
+
+            if (!workerDecode) {
+                workerDecode = new Worker('https://raw.githack.com/softwebtuts/softwebtuts.com/master/decode.js');
+                workerDecode.addEventListener('message', function (e) {
+                    output.value = e.data;
+
+                    if (auto.checked && input.value !== output.value) {
+                        redecode.onclick();
+                    } else {
+                        format();
+                    }
+                });
+            }
+
+            startEffect();
+            output.value = '';
+            workerDecode.postMessage({
+                source: source,
+                packer: packer
+            });
+        }, 250);
+
+    input.oninput = debounce(function () {
+        decode();
+    });
+    for (var i = 0; i < encode.length; i++) {
+        encode[i].onchange = decode;
+    }
+
+    beautify.onchange = format;
+
+    auto.onchange = function () {
+        for (var i = 0; i < encode.length; i++) {
+            if (encode[i].value === 'nicify') continue;
+            encode[i].disabled = auto.checked;
+        }
+        decode();
+    };
+
+    clipboard.on('success', function (e) {
+        e.trigger.classList.add('copied');
+        e.clearSelection();
+        timereset(e.trigger);
+    });
+    clipboard.on('error', function (e) {
+        e.trigger.classList.add('selected');
+        timereset(e.trigger);
+    });
+
+    redecode.onclick = function () {
+        input.value = output.value;
+        decode();
+    };
+
+    clear.onclick = function () {
+        view.textContent = 'Please choose a right encoding type!';
+        stopEffect();
+        setTimeout(function() {
+            auto.onchange();
+        }, 0);
+
+        if (workerDecode) {
+            workerDecode.terminate();
+            workerDecode = undefined;
+        }
+        if (workerFormat) {
+            workerFormat.terminate();
+            workerFormat = undefined;
+        }
+
+        preview.classList.remove('show');
+    };
+
+    window.addEventListener('online',  updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+    updateOnlineStatus();
+
+})();
